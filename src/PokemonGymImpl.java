@@ -178,7 +178,7 @@ public class PokemonGymImpl implements PokemonGym {
                     case "leafstorm" -> grass.leafStorm(pokemon, gymPokemon);
                     case "solarbeam" -> grass.solarBeam(pokemon, gymPokemon);
                     case "leechseed" -> grass.leechSeed(pokemon, gymPokemon);
-                    default -> grass.leaveBlade(pokemon, gymPokemon);
+                    default -> grass.leafBlade(pokemon, gymPokemon);
                 }
             }
             default -> {
@@ -229,7 +229,7 @@ public class PokemonGymImpl implements PokemonGym {
                     case "leafStorm" -> grass.leafStorm(gymPokemon, pokemon);
                     case "solarBeam" -> grass.solarBeam(gymPokemon, pokemon);
                     case "leechSeed" -> grass.leechSeed(gymPokemon, pokemon);
-                    default -> grass.leaveBlade(gymPokemon, pokemon);
+                    default -> grass.leafBlade(gymPokemon, pokemon);
                 }
             }
             default -> {

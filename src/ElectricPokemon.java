@@ -13,7 +13,7 @@ public class ElectricPokemon extends Pokemon {
     List<String> attacks = Arrays.asList("electroball", "thunderpunch", "thunder", "volttackle");
 
     public void electroBall(Pokemon name, Pokemon enemy) {
-        System.out.println("Multiplier: " + name.getDamageMultiplier());
+        System.out.println(name.getName() + " attacks with Electroball.");
         if (name instanceof ElectricPokemon ep && ep.isCharged()) {
             enemy.setHp((int) (enemy.getHp() - 80 * name.getDamageMultiplier()));
             ep.setCharged(false);
@@ -21,7 +21,6 @@ public class ElectricPokemon extends Pokemon {
                 System.out.println(name.getName() + " was charged. It's super duper effective!");
             }
         } else {
-
             enemy.setHp((int) (enemy.getHp() - 40 * name.getDamageMultiplier()));
             if (Objects.equals(enemy.getType(), "water")) {
                 System.out.println("It's super effective!");
@@ -31,7 +30,8 @@ public class ElectricPokemon extends Pokemon {
     }
 
     public void thunderPunch(Pokemon name, Pokemon enemy) {
-        System.out.println("Multiplier: " + name.getDamageMultiplier());
+        System.out.println(name.getName() + " attacks with Thunderpunch.");
+
         enemy.setHp((int) (enemy.getHp() - 70 * name.getDamageMultiplier()));
         if (Objects.equals(enemy.getType(), "water")) {
             System.out.println("It's super effective!");
@@ -40,8 +40,6 @@ public class ElectricPokemon extends Pokemon {
     }
 
     public void thunder(Pokemon name, Pokemon enemy) {
-        System.out.println("Multiplier: " + name.getDamageMultiplier());
-
         System.out.println(name.getName() + " attacks with Thunder");
         if (enemy instanceof ElectricPokemon wp) {
             wp.setCharged(true);
@@ -53,8 +51,7 @@ public class ElectricPokemon extends Pokemon {
     }
 
     public void voltTackle(Pokemon name, Pokemon enemy) {
-        System.out.println("Multiplier: " + name.getDamageMultiplier());
-
+        System.out.println(name.getName() + " attacks with Volttackle.");
         enemy.setHp((int) (enemy.getHp() - 40 * name.getDamageMultiplier()));
         if (Objects.equals(enemy.getType(), "water")) {
             System.out.println("It's super effective!");
