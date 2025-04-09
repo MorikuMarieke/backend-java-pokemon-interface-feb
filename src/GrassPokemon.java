@@ -30,4 +30,16 @@ public class GrassPokemon extends Pokemon {
     public List<String> getAttacks() {
         return attacks;
     }
+
+
+
+    @Override
+    public void setDamageMultiplier(Pokemon enemy) {
+        this.damageMultiplier = switch (enemy.getType()) {
+            case "fire" -> 1.5;
+            case "electric" -> 2.5;
+            case "grass" -> 0.5;
+            default -> 1.0;
+        };
+    }
 }
